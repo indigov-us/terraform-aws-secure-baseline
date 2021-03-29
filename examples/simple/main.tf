@@ -4,11 +4,13 @@ provider "aws" {
   region     = var.region
 }
 
+# helper for lookup to find account id
 data "aws_caller_identity" "current" {
 }
 
+# creates the principle user to associate all these things to (not what I said it was before)
 resource "aws_iam_user" "admin" {
-  name = "cloud_user"
+  name = "admin"
 }
 
 
